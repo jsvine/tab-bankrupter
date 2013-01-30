@@ -1,0 +1,40 @@
+body {
+	font-family: Helvetica;
+}
+
+button {
+	display: block;
+	border: none;
+	background-color: #000;
+	color: #FFF;
+	text-transform: uppercase;
+	cursor: pointer;
+	outline: none;
+}
+
+button#declare {
+	padding: 1.5em;
+	font-size: 11px;
+	line-height: 2.5;
+	font-weight: bold;
+}
+
+button#declare:hover {
+	background: red;	
+}
+
+div#view {
+	font-size: 10px;
+	line-height: 2;
+	text-align: center;
+}
+
+div#view a {
+	color: #999;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+div#view a:hover {
+	color: #000;	
+}

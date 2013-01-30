@@ -1,0 +1,62 @@
+body, html {
+	padding: 0;
+	margin: 0;
+	font-family: Helvetica;
+}
+
+header, footer {
+	background-color: #333;
+	color: #FFF;
+}
+
+header a, footer a, header a:visited, footer a:visited {
+	color: lightblue;
+}
+
+header h1 {
+	margin: 0;
+	padding: 0.5em;
+	font-size: 18px;
+}
+
+section + section {
+	border-top: 1px dashed #999;	
+	margin-top: 1em;
+	padding-top: 1em;
+}
+
+h3.section-header {
+	text-transform: uppercase;	
+	font-size: 14px;
+	margin: 0.5em 0;
+}
+
+.number-of-tabs {
+	color: #999;
+}
+
+.favicon {
+	height: 16px;
+	width: 16px;
+	vertical-align: middle;
+	padding: 4px;
+}
+
+#main {
+	padding: 1em;
+}
+
+.tab a {
+	color: #333;	
+	font-size: 12px;
+	line-height: 22px;
+}
+
+.tab a:visited {
+	color: #333;	
+}
+
+footer .more-info {
+	font-size: 12px;
+	padding: 1em;
+}
