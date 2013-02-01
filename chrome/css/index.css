@@ -20,13 +20,18 @@ header h1 {
 	font-size: 18px;
 }
 
-header #clear-all {
+header #actions {
 	font-size: 12px;	
 	color: #DDD;
-	cursor: pointer;
 	font-weight: normal;
 }
+header .action {
+	cursor: pointer;
+}
 
+header #export-json:hover, header #export-tsv:hover {
+	color: green;
+}
 header #clear-all:hover {
 	color: red;
 }

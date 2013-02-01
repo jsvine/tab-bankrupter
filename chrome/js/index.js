@@ -27,5 +27,21 @@
 		renderBankrupties(bankruptcies);
 	});
 
+	$("#export-json").click(function () {
+		chrome.tabs.create({
+			url: "data:application/json;charset=utf-8," + encodeURIComponent(JSON.stringify(bankruptcies))
+		});
+	});
+	$("#export-tsv").click(function () {
+		var header = [ "bankruptcy_timestamp", "window_id", "tab_index", "tab_id", "url", "title", "favicon", "pinned", "highlighted", "incognito"].join("\t");
+		chrome.tabs.create({
+			url: "data:text/plain;charset=utf-8," + encodeURIComponent(header + "\n" + _.map(bankruptcies, function (b, i) {
+				return _.map(b.tabs, function (t, j) {
+					return [ b.timestamp, t.windowId, t.index, t.id, t.url, t.title, t.favIconUrl, t.pinned, t.highlighted, t.incognito ].join("\t");
+				}).join("\n");
+			}).join("\n"))
+		});
+	});
+
 	renderBankrupties(bankruptcies);
 }).call(this);
