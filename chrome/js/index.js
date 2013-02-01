@@ -2,7 +2,11 @@
 	var bankruptcies = JSON.parse(localStorage.getItem("bankruptcies") || "[]").reverse();
 
 	var template = function (bankruptcies) {
-		// Gah, Chrome extensions aren't allowed to execute `eval`, and hence can't use _.template.
+		if (!bankruptcies.length) {
+			return "<h1 class='no-bankruptcies'>No bankruptcies to report.</h1>";
+		}
+
+		// Gah, Chrome extensions aren't allowed to execute `eval`, and so can't use _.template.
 		var html = _.map(bankruptcies, function (b, i) {
 			var tab_html = _.map(b.tabs, function (tab, j) {
 				return "<div class='tab'><img class='favicon' src='" + tab.favIconUrl + "'><a target='_blank' href='" + tab.url + "'>" + tab.title + "</a></div>";
@@ -13,6 +17,15 @@
 		return html;
 	}; 
 
+	var renderBankrupties = function (bankruptcies) {
+		$("#main").html(template(bankruptcies));
+	};
 
-	$("#main").html(template(bankruptcies));
+	$("#clear-all").click(function () {
+		bankruptcies = [];
+		localStorage.setItem("bankruptcies", JSON.stringify(bankruptcies));
+		renderBankrupties(bankruptcies);
+	});
+
+	renderBankrupties(bankruptcies);
 }).call(this);

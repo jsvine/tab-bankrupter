@@ -7,6 +7,7 @@ body, html {
 header, footer {
 	background-color: #333;
 	color: #FFF;
+	padding: 0.5em;
 }
 
 header a, footer a, header a:visited, footer a:visited {
@@ -15,8 +16,25 @@ header a, footer a, header a:visited, footer a:visited {
 
 header h1 {
 	margin: 0;
-	padding: 0.5em;
+	padding: 0.25em 0;
 	font-size: 18px;
+}
+
+header #clear-all {
+	font-size: 12px;	
+	color: #DDD;
+	cursor: pointer;
+	font-weight: normal;
+}
+
+header #clear-all:hover {
+	color: red;
+}
+
+h1.no-bankruptcies {
+	font-size: 24px;
+	padding: 0.5em;
+	margin: 0;
 }
 
 section + section {
@@ -58,5 +76,4 @@ h3.section-header {
 
 footer .more-info {
 	font-size: 12px;
-	padding: 1em;
 }
