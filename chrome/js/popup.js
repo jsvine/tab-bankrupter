@@ -1,7 +1,7 @@
 (function () {
 	var viewBankruptcies = function () {
 		chrome.tabs.create({
-			url: chrome.extension.getURL('index.html')
+			url: chrome.extension.getURL("pages/index.html")
 		});
 	};
 	var declareBankruptcy = function (tabs) {
