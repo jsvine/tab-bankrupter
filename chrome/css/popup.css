@@ -10,6 +10,11 @@ button {
 	text-transform: uppercase;
 	cursor: pointer;
 	outline: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
 
 button#declare {
