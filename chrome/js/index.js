@@ -4,10 +4,10 @@
 		$main.html(html);
 	};
 
-	var setupEvents = function (bank, $header) {
+	var setupEvents = function (bank, $main, $header) {
 		$header.find("#clear-all").click(function () {
 			bank.clear();
-			renderBankrupties(bank);
+			renderBankruptcies(bank, $main);
 		});
 
 		$header.find("#export-json").click(function () {
@@ -27,5 +27,5 @@
 	var $main = $("#main");
 	var $header = $("header");
 	renderBankruptcies(bank, $main);
-	setupEvents(bank, $header);
+	setupEvents(bank, $main, $header);
 }).call(this);
