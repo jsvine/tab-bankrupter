@@ -26,6 +26,6 @@ Tab Bankrupter keeps all your data on your computer. It does not  share your dat
 
 Tab Bankrupter does not load any "external" resource, such as analytics scripts, et cetera.
 
-# Interest in Contributing?
+## Interested in Contributing?
 
 Please do.
