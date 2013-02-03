@@ -8,6 +8,7 @@ header, footer {
 	background-color: #333;
 	color: #FFF;
 	padding: 0.5em;
+	overflow: auto;
 }
 
 header a, footer a, header a:visited, footer a:visited {
@@ -15,16 +16,23 @@ header a, footer a, header a:visited, footer a:visited {
 }
 
 header h1 {
+	float: left;
 	margin: 0;
-	padding: 0.25em 0;
+	padding: 0;
 	font-size: 18px;
+	height: 30px;
+	line-height: 30px;
 }
 
 header #actions {
-	font-size: 12px;	
+	float: left;
+	margin-left: 2em;
+	height: 30px;
+	line-height: 32px;
+	font-size: 13px;
 	color: #DDD;
-	font-weight: normal;
 }
+
 header .action {
 	cursor: pointer;
 }
