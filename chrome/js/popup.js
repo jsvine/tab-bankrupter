@@ -8,6 +8,13 @@
 
 	// Saves data about open tabs, and then closes them.
 	var declareBankruptcy = function (tabs) {
+		// Don't bankrupt Chrome URLs or data URIs.
+		var REJECTOR = /^(data|chrome):/;
+		tabs = _.compact(_.reject(tabs, function (t) {
+			return REJECTOR.test(t.url);
+		}));
+		
+		// Pour Chrome's "Tab" objects into our own representation.
 		var bankruptcy = new TB.Bankruptcy({
 			timestamp: new Date().getTime(),
 			tabs: tabs
