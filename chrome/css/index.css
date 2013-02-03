@@ -90,3 +90,7 @@ h3.section-header {
 footer .more-info {
 	font-size: 12px;
 }
+
+.more-info + .more-info {
+	margin-top: 0.5em;	
+}
