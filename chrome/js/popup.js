@@ -22,8 +22,9 @@
 
 		// Setup/get localStorage.
 		var bank = new TB.Bank("bankruptcies").load();
-		// Add new bankruptcies, and save.
-		bank.bankruptcies.push(bankruptcy);
+		
+		// Add new bankruptcies to the beginning of array, and save.
+		bank.bankruptcies.unshift(bankruptcy);
 		bank.save();
 
 		// Open the bankruptcy-viewer page.

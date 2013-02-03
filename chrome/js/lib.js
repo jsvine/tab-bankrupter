@@ -62,7 +62,7 @@
 
 	TB.Bank.prototype = {
 		load: function () {
-			var raw = JSON.parse(localStorage.getItem(this.localStorageKey) || "[]").reverse();
+			var raw = JSON.parse(localStorage.getItem(this.localStorageKey) || "[]");
 			this.bankruptcies = _.map(_.compact(raw), function (b, i) {
 				return new TB.Bankruptcy(b);
 			});
