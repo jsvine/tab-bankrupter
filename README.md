@@ -4,7 +4,7 @@ A Chrome extension for declaring "tab bankruptcy" without losing all your links.
 
 ## Install
 
-For the latest release, [install Tab Bankrupter from the Chrome Web Store](LINK TK).
+For the latest release, [install Tab Bankrupter from the Chrome Web Store](https://chrome.google.com/webstore/detail/tab-bankrupter/pndipmgldhbejkehopnbbpjgidkbiimh).
 
 For the most recent build, clone this repository to your computer, and follow Google's [instructions for loading unpacked extensions](http://developer.chrome.com/extensions/getstarted.html#unpacked).
 
