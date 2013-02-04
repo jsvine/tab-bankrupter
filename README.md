@@ -24,7 +24,7 @@ Tab Bankrupter has access only to the metadata about your tabs — URL and titl
 
 Tab Bankrupter keeps all your data on your computer. It does not  share your data or actions with anybody.
 
-Tab Bankrupter does not load any "external" resource, such as analytics scripts, et cetera.
+Tab Bankrupter does not load any "external" resources, such as analytics scripts, Facebook widgets, et cetera.
 
 ## Interested in Contributing?
 
