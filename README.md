@@ -2,6 +2,9 @@
 
 A Chrome extension for declaring "tab bankruptcy" without losing all your links.
 
+<img width="50%" src="screenshots/cropped/1280x800/screenshot-0.png">
+<img width="50%" src="screenshots/cropped/1280x800/screenshot-1.png">
+
 ## Install
 
 For the latest release, [install Tab Bankrupter from the Chrome Web Store](https://chrome.google.com/webstore/detail/tab-bankrupter/pndipmgldhbejkehopnbbpjgidkbiimh).
