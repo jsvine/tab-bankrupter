@@ -19,7 +19,7 @@ The earliest reference I can find to "Tab Bankruptcy" is a May 2007 [blog post b
 
 > I apologize, but I am declaring tab bankruptcy. I will do so every Saturday from now on. If I haven’t gotten back to that tab by Saturday morning, I'm force-quitting Firefox and no, dammit, I won't try to restore my last session.
 
-If force-quitting is a bit extreme for you. Perhaps you don't want to have to restart your browser, perhaps you want a record of the tabs you've relinquished. Then Tab Bankrupter is for you. It's an extension for Google's Chrome browser that lets you declare tab bankruptcy without quitting, and keeps track of the bankruptcies you've declared. It also skips pinned tabs, so you can hold onto Gmail, or whatever else you still want open.
+Perhaps force-quitting is a bit extreme for you. Perhaps you don't want to have to restart your browser, perhaps you want a record of the tabs you've relinquished. Then Tab Bankrupter is for you. It's an extension for Google's Chrome browser that lets you declare tab bankruptcy without quitting, and keeps track of the bankruptcies you've declared. It also skips pinned tabs, so you can hold onto Gmail, or whatever else you still want open.
 
 ## Privacy
 
