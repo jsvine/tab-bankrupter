@@ -20,9 +20,21 @@
 			var raw = this.raw;
 			return [ this.bankruptcy.timestamp, raw.windowId, raw.index, raw.id, raw.url, raw.title, raw.favIconUrl, raw.pinned, raw.highlighted, raw.incognito ].join("\t");
 		},
-		toHTML: function () {
+		toElement: function () {
 			var raw = this.raw;
-			return "<div class='tab'><img class='favicon' src='" + raw.favIconUrl + "'><a target='_blank' href='" + raw.url + "'>" + raw.title + "</a></div>";
+            var el = document.createElement("div");
+            el.className = "tab";
+            var img = document.createElement("img");
+            img.className = "favicon";
+            img.setAttribute("src", raw.favIconUrl);
+            var link = document.createElement("a");
+            link.setAttribute("target", "_blank");
+            link.setAttribute("href", raw.url);
+            var title = raw.title.replace("<", "&lt;").replace(">", "&gt;");
+            link.innerHTML = title;
+            el.appendChild(img);
+            el.appendChild(link);
+			return el;
 		}
 	};
 
@@ -48,9 +60,11 @@
 		},
 		toHTML: function () {
 			var section_header_html = "<h3 class='section-header'><span class='timestamp'>" + moment(this.timestamp).calendar() + "</span><span class='number-of-tabs'> &mdash; " + this.tabs.length + " tab" + (this.tabs.length === 1 ? "" : "s") + " bankrupted</span></h3>";
-			var tab_html = _.map(this.tabs, function (t, i) {
-				return t.toHTML();
-			}).join("");
+            var container = document.createElement("div");
+			_.forEach(this.tabs, function (b, i) {
+				container.appendChild(b.toElement());
+			});
+            var tab_html = container.innerHTML;
 			return "<section class='bankruptcy'>" + section_header_html + "<div class='tabs'>" + tab_html + "</div></section>";	
 		}
 	};
