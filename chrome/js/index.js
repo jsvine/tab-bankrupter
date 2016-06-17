@@ -21,6 +21,19 @@
 				url: "data:text/plain;charset=utf-8," + encodeURIComponent(bank.toTSV())
 			});
 		});
+
+		$(".reopen-bankruptcy").click(function () {
+			var bankruptcy_id = $(this).data("bankruptcy-id");
+			var restored_bankruptcy = _.find(bank.bankruptcies, function(bankruptcy) {
+				if(bankruptcy.id === bankruptcy_id) {
+					return bankruptcy;
+				}
+			});
+
+			_.each(restored_bankruptcy.tabs, function (tab) {
+				chrome.tabs.create({ url: tab.raw.url });
+			});
+		});
 	};
 
 	var bank = new TB.Bank("bankruptcies").load();

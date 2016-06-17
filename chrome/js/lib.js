@@ -2,6 +2,10 @@
 	var root = this;
 	var _ = root._;
 
+	// Unique Id for bankruptcies. Each newly created bankruptcy
+	// will be assigned the next incremented number
+	var bankruptcy_id = 0;
+
 	// Set up namespace.
 	var TB = {};
 
@@ -43,6 +47,7 @@
 		var _this = this;
 		this.raw = raw;
 		this.timestamp = raw.timestamp;
+		this.id = bankruptcy_id++;
 		this.tabs = _.map(raw.tabs, function (t, i) {
 			return new TB.Tab(t, _this);
 		});
@@ -60,12 +65,14 @@
 		},
 		toHTML: function () {
 			var section_header_html = "<h3 class='section-header'><span class='timestamp'>" + moment(this.timestamp).calendar() + "</span><span class='number-of-tabs'> &mdash; " + this.tabs.length + " tab" + (this.tabs.length === 1 ? "" : "s") + " bankrupted</span></h3>";
-            var container = document.createElement("div");
+			var reopen_button_html = "<button class='reopen-bankruptcy' data-bankruptcy-id='" + this.id + "''>Reopen Tabs</button>";
+			var container = document.createElement("div");
+
 			_.forEach(this.tabs, function (b, i) {
 				container.appendChild(b.toElement());
 			});
             var tab_html = container.innerHTML;
-			return "<section class='bankruptcy'>" + section_header_html + "<div class='tabs'>" + tab_html + "</div></section>";	
+			return "<section class='bankruptcy'>" + section_header_html + reopen_button_html + "<div class='tabs'>" + tab_html + "</div></section>";	
 		}
 	};
 
