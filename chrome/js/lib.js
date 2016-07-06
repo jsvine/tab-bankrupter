@@ -64,15 +64,14 @@
 			}).join("\n");
 		},
 		toHTML: function () {
-			var section_header_html = "<h3 class='section-header'><span class='timestamp'>" + moment(this.timestamp).calendar() + "</span><span class='number-of-tabs'> &mdash; " + this.tabs.length + " tab" + (this.tabs.length === 1 ? "" : "s") + " bankrupted</span></h3>";
-			var reopen_button_html = "<button class='reopen-bankruptcy' data-bankruptcy-id='" + this.id + "''>Reopen Tabs</button>";
+			var section_header_html = "<h3 class='section-header'><span class='timestamp'>" + moment(this.timestamp).calendar() + "</span> <span class='number-of-tabs'> &mdash; " + this.tabs.length + " tab" + (this.tabs.length === 1 ? "" : "s") + " bankrupted</span> <span class='reopen-bankruptcy' data-bankruptcy-id='" + this.id + "''>Reopen Tabs</span></h3>";
 			var container = document.createElement("div");
 
 			_.forEach(this.tabs, function (b, i) {
 				container.appendChild(b.toElement());
 			});
             var tab_html = container.innerHTML;
-			return "<section class='bankruptcy'>" + section_header_html + reopen_button_html + "<div class='tabs'>" + tab_html + "</div></section>";	
+			return "<section class='bankruptcy'>" + section_header_html + "<div class='tabs'>" + tab_html + "</div></section>";	
 		}
 	};
 
