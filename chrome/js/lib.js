@@ -30,7 +30,9 @@
             el.className = "tab";
             var img = document.createElement("img");
             img.className = "favicon";
-            img.setAttribute("src", raw.favIconUrl);
+            if (raw.favIconUrl) {
+                img.setAttribute("src", raw.favIconUrl);
+            }
             var link = document.createElement("a");
             link.setAttribute("target", "_blank");
             link.setAttribute("href", raw.url);
