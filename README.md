@@ -33,8 +33,8 @@ Tab Bankrupter does not load any "external" resources, such as analytics scripts
 
 Many thanks to the following GitHub users for finding bugs and/or contributing code:
 
-- @zencephalon
-- @slinhart
+- [@zencephalon](https://github.com/zencephalon)
+- [@slinhart](https://github.com/slinhart)
 
 ## Interested in Contributing?
 
