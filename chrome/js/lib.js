@@ -2,6 +2,10 @@
 	var root = this;
 	var _ = root._;
 
+	// Unique Id for bankruptcies. Each newly created bankruptcy
+	// will be assigned the next incremented number
+	var bankruptcy_id = 0;
+
 	// Set up namespace.
 	var TB = {};
 
@@ -26,7 +30,9 @@
             el.className = "tab";
             var img = document.createElement("img");
             img.className = "favicon";
-            img.setAttribute("src", raw.favIconUrl);
+            if (raw.favIconUrl) {
+                img.setAttribute("src", raw.favIconUrl);
+            }
             var link = document.createElement("a");
             link.setAttribute("target", "_blank");
             link.setAttribute("href", raw.url);
@@ -43,6 +49,7 @@
 		var _this = this;
 		this.raw = raw;
 		this.timestamp = raw.timestamp;
+		this.id = bankruptcy_id++;
 		this.tabs = _.map(raw.tabs, function (t, i) {
 			return new TB.Tab(t, _this);
 		});
@@ -59,8 +66,9 @@
 			}).join("\n");
 		},
 		toHTML: function () {
-			var section_header_html = "<h3 class='section-header'><span class='timestamp'>" + moment(this.timestamp).calendar() + "</span><span class='number-of-tabs'> &mdash; " + this.tabs.length + " tab" + (this.tabs.length === 1 ? "" : "s") + " bankrupted</span></h3>";
-            var container = document.createElement("div");
+			var section_header_html = "<h3 class='section-header'><span class='timestamp'>" + moment(this.timestamp).calendar() + "</span> <span class='number-of-tabs'> &mdash; " + this.tabs.length + " tab" + (this.tabs.length === 1 ? "" : "s") + " bankrupted</span> <span class='reopen-bankruptcy' data-bankruptcy-id='" + this.id + "''>Reopen Tabs</span></h3>";
+			var container = document.createElement("div");
+
 			_.forEach(this.tabs, function (b, i) {
 				container.appendChild(b.toElement());
 			});
