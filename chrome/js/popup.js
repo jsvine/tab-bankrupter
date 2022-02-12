@@ -35,10 +35,11 @@
 	};
 
 	var setupEvents = function ($main) {
-		// Declare bankruptcy on all non-pinned tabs.
+		// Declare bankruptcy on all non-pinned tabs, non-grouped tabs
 		$main.find("button#declare").click(function () {
 			chrome.tabs.query({
-				pinned: false
+				pinned: false,
+				groupId: -1
 			}, declareBankruptcy);
 		});
 
