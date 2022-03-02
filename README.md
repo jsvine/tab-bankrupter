@@ -9,7 +9,7 @@ A Chrome extension for declaring "tab bankruptcy" without losing all your links.
 
 For the latest release, [install Tab Bankrupter from the Chrome Web Store](https://chrome.google.com/webstore/detail/tab-bankrupter/pndipmgldhbejkehopnbbpjgidkbiimh).
 
-For the most recent build, clone this repository to your computer, and follow Google's [instructions for loading unpacked extensions](http://developer.chrome.com/extensions/getstarted.html#unpacked).
+For the most recent build, clone this repository to your computer, and follow Google's [instructions for loading unpacked extensions](https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked).
 
 ## Background
 
@@ -19,13 +19,13 @@ The earliest reference I can find to "Tab Bankruptcy" is a May 2007 [blog post b
 
 > I apologize, but I am declaring tab bankruptcy. I will do so every Saturday from now on. If I haven’t gotten back to that tab by Saturday morning, I'm force-quitting Firefox and no, dammit, I won't try to restore my last session.
 
-Perhaps force-quitting is a bit extreme for you. Perhaps you don't want to have to restart your browser, perhaps you want a record of the tabs you've relinquished. Then Tab Bankrupter is for you. It's an extension for Google's Chrome browser that lets you declare tab bankruptcy without quitting, and keeps track of the bankruptcies you've declared. It also skips pinned tabs, so you can hold onto Gmail, or whatever else you still want open.
+Perhaps force-quitting is a bit extreme for you. Perhaps you don't want to have to restart your browser, perhaps you want a record of the tabs you've relinquished. Then Tab Bankrupter is for you. It's an extension for Google's Chrome browser that lets you declare tab bankruptcy without quitting, and keeps track of the bankruptcies you've declared. It also skips pinned and grouped tabs, so you can hold onto Gmail, or whatever else you still want open.
 
 ## Privacy
 
 Tab Bankrupter has access only to the metadata about your tabs — URL and title being the most interesting.
 
-Tab Bankrupter keeps all your data on your computer. It does not  share your data or actions with anybody.
+Tab Bankrupter keeps all your data on your computer. It does not share your data or actions with anybody.
 
 Tab Bankrupter does not load any "external" resources, such as analytics scripts, Facebook widgets, et cetera.
 
